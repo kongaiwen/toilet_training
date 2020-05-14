@@ -1,0 +1,23 @@
+{% extends 'toilet_training/base.html' %}
+{% block content %}
+<h1>{{ profile.first_name }}'s Dashboard</h1>
+{% if trainees %}
+<table>
+{% for trainee in trainees %}
+<tr>
+	<td>{{ trainee.alias }}</td>
+	<td>             </td>
+	<td><a href="{% url 'active_session' trainee.alias %}">Open Session</a></td>
+	<td>             </td>
+	<td><a href="{% url 'trainee_data' trainee.alias %}">View Data</a></td>
+</tr>
+{% endfor %}
+{% else %}
+<p>You have no trainees</p>
+</table>
+{% endif %}
+
+<p>
+	<a href="{% url 'add_trainee' %}">Add New Trainee</a>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+from django.apps import AppConfig
+
+
+class ToiletTrainingConfig(AppConfig):
+    name = 'toilet_training'

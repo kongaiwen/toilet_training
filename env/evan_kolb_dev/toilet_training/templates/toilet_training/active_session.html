@@ -1,0 +1,88 @@
+{% extends 'toilet_training/base.html' %}
+{% load static %}
+{% block script %}
+<script type="text/javascript" src="{% static 'toilet_training/active_session.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+<h1>{{ trainee.alias }}'s Active Training Session</h1>
+{% endblock %}
+
+{% block content %}
+
+<table>
+	<tr>
+		<td>Trainee: </td> 
+		<td id="trainee_alias">{{ trainee.alias }}</td>
+		<td>Age: </td>  
+		<td id="trainee_age">{{ trainee.age }}</td>
+		<td>Level: </td>
+		<td id="current_level">1</td>
+		<td>Voids: </td> 
+		<td id="current_voids">0</td>
+		<td>Accidents: </td>
+		<td id="current_accidents">0</td>
+	</tr>
+</table>
+
+
+<div id="buttons">
+	<button id="toilet_timer">Start Toilet Timer</button>
+	<button id="void">Void</button>
+	<button id="accident">Accident</button>
+	<button id="off_timer">Start Off Timer</button>
+</div>
+	
+
+	<div id="countdown" style=display:block>
+		<p>Placeholder text</p>
+	</div>
+
+
+	<div id="basic_prompt" style=display:block>
+		<p><span id=level_up style=display:none> Congratulations!</span><span id=level_down_intro style=display:none> Whoops!</span></p>
+		<p>Your client is now <span id="level_down" style=display:none>back</span> on Level <span id=level>1</span>. 
+			<br>Complete scheduled sits (<span id=sit_duration>10</span> minutes) every <span id=sit_frequency>5</span> minutes.</p>
+	</div>
+
+	<div id="void_prompt" style=display:none>
+		<p>Successful void! <br>Provide your client with designated reinforcement paired with verbal praise.</p>
+	</div>
+
+	<div id="accident_prompt" style=display:none>
+		<p>Uh-Oh!   Let client know that they have had an accident and it is time to go to the bathroom. <br>
+		Assist client in changing and cleaning. <br>
+		(or complete positive practice procedure if directed by BCBA)</p>
+	</div>
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

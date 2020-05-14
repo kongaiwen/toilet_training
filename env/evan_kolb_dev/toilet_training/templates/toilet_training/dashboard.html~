@@ -1,0 +1,3 @@
+{% extends 'toilet_training/base.html' %}
+
+<h1>{{ profile.get_full_name() }}'s Dashboard</h1>

@@ -1,0 +1,30 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type='text/javascript'>
+	var trainee =  {{ trainee_json|safe }};
+</script>
+
+<div id="app">
+	<h1>[[message]]</h1>
+
+	<h2>[[trainee.toilet_training.trainee.pk]]</h2>
+	<h2>[[trainee.toilet_training.trainee.current_level]]</h2>
+
+
+
+
+
+
+
+
+
+<script>
+	var app = new Vue({
+		delimiters: ['[[', ']]'],
+		el: "#app",
+		data: {
+			message: 'Hello Vue!',
+		}
+	});
+</script>

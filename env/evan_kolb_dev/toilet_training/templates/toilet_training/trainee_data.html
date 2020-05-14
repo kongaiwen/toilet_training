@@ -1,0 +1,32 @@
+{% extends 'toilet_training/base.html' %}
+{% block content %}
+<table>
+	<tr>
+		<td>Alias:</td>
+		<td>{{ trainee.alias }}</td>
+	</tr>
+	<tr>
+		<td>Age:</td>
+		<td>{{ trainee.age }}</td>
+	</tr>
+	<tr>
+		<td>Trainers:</td>
+		{% for trainer in trainee.trainers.all %}
+		{% if not forloop.last %}
+		<td>{{ trainer.first_name }} {{ trainer.last_name }},  </td>
+		{% else %}
+		<td>{{ trainer.first_name }} {{ trainer.last_name }}</td>
+
+		{% endif %}
+		{% endfor %}
+
+		
+	</tr>
+	<tr>
+		<td>Current Level:</td>
+		<td>{{ trainee.current_level }}</td>
+	</tr>
+
+</table>
+
+{% endblock %}
